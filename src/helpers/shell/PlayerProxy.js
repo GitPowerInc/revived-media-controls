@@ -601,7 +601,7 @@ export default class PlayerProxy {
      * @public
      * @returns {void}
      */
-    onDestroy() {
+    destroy() {
         if (this.pollSourceId != null) {
             GLib.source_remove(this.pollSourceId);
         }
