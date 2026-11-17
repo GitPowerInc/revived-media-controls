@@ -302,7 +302,7 @@ export default class MediaControls extends Extension {
      */
     disable() {
         for (const playerProxy of this.playerProxies.values()) {
-            playerProxy.onDestroy();
+            playerProxy.destroy();
         }
         this.playerProxies.clear();
         this.playerProxies = null;
@@ -629,7 +629,7 @@ export default class MediaControls extends Extension {
      */
     removePlayer(busName) {
         debugLog("Removing player:", busName);
-        this.playerProxies.get(busName)?.onDestroy();
+        this.playerProxies.get(busName)?.destroy();
         this.playerProxies.delete(busName);
         this.panelBtn?.updateWidgets(WidgetFlags.MENU_PLAYERS);
         this.setActivePlayer();

@@ -2,7 +2,7 @@ import Adw from "gi://Adw";
 import Gio from "gi://Gio";
 import Gtk from "gi://Gtk";
 
-class AppChooser extends Adw.Window {
+export default class AppChooser extends Adw.Window {
     /**
      * @private
      * @type {Gtk.ListBox}
@@ -68,4 +68,3 @@ class AppChooser extends Adw.Window {
         });
     }
 }
-export default AppChooser;
