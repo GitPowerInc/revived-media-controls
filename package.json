@@ -17,7 +17,7 @@
     "ext:enable": "gnome-extensions enable mediacontrols@GitPowerInc.github.com",
     "ext:disable": "gnome-extensions disable mediacontrols@GitPowerInc.github.com",
     "ext:prefs": "gnome-extensions prefs mediacontrols@GitPowerInc.github.com",
-    "ext:upload": "gnome-extensions upload --accept-tos --user pocoguy ${EGO_ARGS} dist/builds/mediacontrols@GitPowerInc.github.com.shell-extension.zip",
+    "ext:upload": "gnome-extensions upload --accept-tos --user GitPowerInc ${EGO_ARGS} dist/builds/mediacontrols@GitPowerInc.github.com.shell-extension.zip",
 
     "translations:extract": "xgettext --from-code=UTF-8 --add-comments --join-existing --keyword=_ --keyword=C_:1c,2 --language=Javascript --output=assets/locale/mediacontrols@GitPowerInc.github.com.pot $(find . -type f \\( -name '*.ui' -o -name '*.js' \\) -not -path './node_modules/*')",
     "translations:merge": "for po in assets/locale/*.po; do msgmerge -U \"$po\" assets/locale/mediacontrols@GitPowerInc.github.com.pot; done && rm -f assets/locale/*.po~",
