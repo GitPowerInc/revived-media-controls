@@ -48,7 +48,16 @@ function find_child_by_name(parent, name) {
 }
 
 /** @extends PanelMenu.Button */
-class PanelButton extends PanelMenu.Button {
+export default class PanelButton extends PanelMenu.Button {
+    static [GObject.GTypeName] = "PanelButton";
+    static [GObject.signals] = {
+        'signal-name': {},
+    };
+
+    static {
+        GObject.registerClass(this);
+    }
+
     /**
      * @private
      * @type {PlayerProxy}
@@ -1382,13 +1391,3 @@ class PanelButton extends PanelMenu.Button {
         }
     }
 }
-
-const GPanelButton = GObject.registerClass(
-    {
-        GTypeName: "PanelButton",
-        Properties: {},
-    },
-    PanelButton,
-);
-
-export default GPanelButton;

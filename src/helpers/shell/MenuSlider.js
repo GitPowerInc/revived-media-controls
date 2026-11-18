@@ -6,7 +6,17 @@ import * as Slider from "resource:///org/gnome/shell/ui/slider.js";
 import { msToHHMMSS } from "../../utils/common.js";
 
 /** @extends St.BoxLayout */
-class MenuSlider extends St.BoxLayout {
+export default class MenuSlider extends St.BoxLayout {
+    static [GObject.GTypeName] = "MenuSlider";
+    static [GObject.signals] = {
+        seeked: {
+            param_types: [GObject.TYPE_INT],
+        },
+    };
+
+    static {
+        GObject.registerClass(this);
+    }
     /**
      * @private
      * @type {Clutter.PropertyTransition}
@@ -281,16 +291,3 @@ class MenuSlider extends St.BoxLayout {
         }
     }
 }
-const GMenuSlider = GObject.registerClass(
-    {
-        GTypeName: "MenuSlider",
-        Signals: {
-            seeked: {
-                param_types: [GObject.TYPE_INT],
-            },
-        },
-    },
-    MenuSlider,
-);
-
-export default GMenuSlider;

@@ -9,7 +9,7 @@ import { LabelTypes } from "../../types/enums/common.js";
 
 /** @extends Adw.PreferencesGroup */
 
-class LabelList extends Adw.PreferencesGroup {
+export default class LabelList extends Adw.PreferencesGroup {
     /**
      * @public
      * @type {string[]}
@@ -223,5 +223,3 @@ class LabelList extends Adw.PreferencesGroup {
         return texture;
     }
 }
-
-export default LabelList;

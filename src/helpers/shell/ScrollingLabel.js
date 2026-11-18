@@ -18,7 +18,13 @@ import { debugLog } from "../../utils/common.js";
  */
 
 /** @extends St.ScrollView */
-class ScrollingLabel extends St.ScrollView {
+export default class ScrollingLabel extends St.ScrollView {
+    static [GObject.GTypeName] = "ScrollingLabel";
+
+    static {
+        GObject.registerClass(this);
+    }
+
     /**
      * @public
      * @type {St.Label}
@@ -381,11 +387,3 @@ class ScrollingLabel extends St.ScrollView {
     }
 }
 
-const GScrollingLabel = GObject.registerClass(
-    {
-        GTypeName: "ScrollingLabel",
-    },
-    ScrollingLabel,
-);
-
-export default GScrollingLabel;
