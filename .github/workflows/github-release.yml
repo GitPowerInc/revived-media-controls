@@ -90,3 +90,13 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: dist/builds/*.zip
+          
+      - name: Upload to EGO
+        if: github.event.release.prerelease == false
+        env:
+          EGO_PASSWORD: ${{ secrets.EGO_PASSWORD }}
+          EGO_ARGS: --password-file -
+        run: |
+          printf "%s" "$EGO_PASSWORD" | pnpm run ext:upload
+
+          
