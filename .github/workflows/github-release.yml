@@ -90,7 +90,11 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: dist/builds/*.zip
-          
+
+      - name: Install pnpm
+        if: github.event.release.prerelease == false
+        run: npm install -g pnpm
+        
       - name: Upload to EGO
         if: github.event.release.prerelease == false
         env:
