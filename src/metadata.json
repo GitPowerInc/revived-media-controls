@@ -1,7 +1,7 @@
 {
   "uuid": "mediacontrols@GitPowerInc.github.com",
   "name": "Revived Media Controls",
-  "description": "Show controls and information of the currently playing media in the panel.",
+  "description": "The Media Controls extension we all know and love, brought to newer GNOME versions. Show controls and information of the currently playing media in the panel. Entirely customizeable.",
   "url": "https://github.com/GitPowerInc/revived-media-controls",
   "settings-schema": "org.gnome.shell.extensions.mediacontrols",
   "gettext-domain": "mediacontrols@GitPowerInc.github.com",
